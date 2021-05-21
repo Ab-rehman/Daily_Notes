@@ -108,6 +108,7 @@ class _RegisterScreenPageState extends State<RegisterScreenPage> {
                         height: 50.0,
                         child: ElevatedButton(
                           onPressed: () async {
+                            FocusManager.instance.primaryFocus.unfocus();
                             try {
                               final result = await InternetAddress.lookup('google.com');
                               if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
